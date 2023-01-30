@@ -3,7 +3,7 @@ const github = require('@actions/github');
 
 try {
   // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('file');
+  const file = core.getInput('file');
   console.log(`File Path: ${file}!`);
   const time = (new Date()).toTimeString();
   core.setOutput("filePath", time);
