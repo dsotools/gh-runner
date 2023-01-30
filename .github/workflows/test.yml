@@ -19,4 +19,8 @@ jobs:
       uses: ./
       with:
         file: sample.yml
-        outputPath: ${{ github.workspace }}        
+        outputPath: ${{ github.workspace }}   
+
+    - name: Show Output
+      run: |
+        ls
