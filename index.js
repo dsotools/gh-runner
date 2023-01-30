@@ -16,7 +16,7 @@ try {
     
       const form = new FormData();
   //    form.append('title', title);
-      form.append('file', filePath);
+      form.append('file', file);
     
       const resp = await axios.post('http://api.dsotools.com/api/upload', form, {
         headers: {
@@ -25,9 +25,9 @@ try {
       });
     
       if (resp.status === 200) {
-        const path = `${__dirname}/files/img.jpeg`; 
+        const path = `${__dirname}/files/sample.bicep`; 
         const filePath = fs.createWriteStream(path);
-        res.pipe(filePath);
+        resp.pipe(filePath);
         filePath.on('finish',() => {
             filePath.close();
             console.log('Download Completed'); 
