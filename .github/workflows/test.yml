@@ -15,7 +15,8 @@ jobs:
         npm install
         npm run build
 
-    - uses: ./
+    - name: Test local action
+      uses: ./
       with:
         file: sample.yml
         outputPath: ${{ github.workspace }}        
