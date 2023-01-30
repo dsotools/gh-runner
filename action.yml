@@ -1,0 +1,19 @@
+name: 'DSO Tools Runner'
+description: 'Converts a DSO yaml to the selected format'
+inputs:
+  file:  # location of yaml file
+    description: 'Location of configuration YAML'
+    required: true
+    default: 'World'
+  outputType:  # location of yaml file
+    description: 'File type being returned'
+    default: 'bicep'    
+  outputPath:  # location of yaml file
+    description: 'File type being returned'
+    default: 'bicep'        
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
