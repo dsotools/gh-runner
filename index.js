@@ -5,18 +5,18 @@ const axios = require('axios');
 const FormData = require('form-data');
 
 try {
-  const file = core.getInput('file');
+  const filePath = core.getInput('file');
   const saveDir = core.getInput('outputPath')
-  console.log(`File Path: ${file}!`);
+  console.log(`File Path: ${filePath}!`);
 
   const upload = async () => {
     try {
-      const file = fs.createReadStream(file);
+      const file = fs.createReadStream(filePath);
 //      const title = 'My file';
     
       const form = new FormData();
   //    form.append('title', title);
-      form.append('file', file);
+      form.append('file', filePath);
     
       const resp = await axios.post('http://api.dsotools.com/api/upload', form, {
         headers: {
